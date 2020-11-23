@@ -35,6 +35,7 @@ export default function Home({ allPostsData }) {
   )
 }
 
+//getServerSideProps -> SSR getStaticProps -> SSG
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData()
   // 関数を呼び出した結果は props キーの内部で返す必要があります。
