@@ -24,6 +24,8 @@ export default function Post({ postData }) {
 }
 
 // idがとりうる値のリストを返す
+// fallbackがfalseであれば、getStaticPaths から return されていないあらゆるパスはアクセスすると 404 ページ になります。
+// fallback が true であれば、getStaticProps の挙動は異なります詳しくはドキュメントhttps://nextjs.org/docs/basic-features/data-fetching#fallback-pages
 export async function getStaticPaths() {
   const paths = getAllPostIds()
   return {
