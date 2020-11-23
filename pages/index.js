@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Link from 'next/link'
+import { Date } from '../components/date'
 import { Layout, siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
@@ -10,7 +12,9 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hello World! <a href='https://twitter.com/tttttt_621_s'>Twitter</a></p>
+        <p>
+          Hello World! <a href="https://twitter.com/tttttt_621_s">Twitter</a>
+        </p>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
@@ -22,11 +26,13 @@ export default function Home({ allPostsData }) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>
@@ -42,7 +48,7 @@ export async function getStaticProps() {
   // このように設定すれば、allPostsData prop は Home コンポーネントに渡されます
   return {
     props: {
-      allPostsData
-    }
+      allPostsData,
+    },
   }
 }
