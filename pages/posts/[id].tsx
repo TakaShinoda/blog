@@ -6,7 +6,18 @@ import Head from 'next/head'
 import { Date } from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 
-export default function Post({ postData }) {
+// getStaticProps、getStaticPaths、getServerSideProps 用の型
+import { GetStaticProps, GetStaticPaths } from 'next'
+
+export default function Post({
+  postData,
+}: {
+  postData: {
+    title: string
+    date: string
+    contentHtml: string
+  }
+}) {
   return (
     <Layout>
       <Head>
@@ -26,7 +37,7 @@ export default function Post({ postData }) {
 // idがとりうる値のリストを返す
 // fallbackがfalseであれば、getStaticPaths から return されていないあらゆるパスはアクセスすると 404 ページ になります。
 // fallback が true であれば、getStaticProps の挙動は異なります詳しくはドキュメントhttps://nextjs.org/docs/basic-features/data-fetching#fallback-pages
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const paths = getAllPostIds()
   return {
     paths,
@@ -34,8 +45,8 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const postData = await getPostData(params.id as string)
   return {
     props: {
       postData,
