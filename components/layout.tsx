@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const name = 'Takahiro Shinoda'
 export const siteTitle = 'Welcome'
@@ -33,8 +34,15 @@ export const Layout = ({
       <header className={styles.header}>
         {home ? (
           <>
-            <img
+            {/* <img
               src="/images/profile.jpg"
+              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+              alt={name}
+            /> */}
+            <Image
+              src="/images/profile.jpg"
+              width='200'
+              height='200'
               className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
               alt={name}
             />
@@ -42,7 +50,7 @@ export const Layout = ({
           </>
         ) : (
           <>
-            <Link href="/">
+            {/* <Link href="/">
               <a>
                 <img
                   src="/images/profile.jpg"
@@ -50,12 +58,12 @@ export const Layout = ({
                   alt={name}
                 />
               </a>
-            </Link>
-            <h2 className={utilStyles.headingLg}>
+            </Link> */}
+            {/* <h2 className={utilStyles.headingLg}>
               <Link href="/">
                 <a className={utilStyles.colorInherit}>{name}</a>
               </Link>
-            </h2>
+            </h2> */}
           </>
         )}
       </header>
