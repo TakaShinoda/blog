@@ -5,6 +5,7 @@ import { Layout, siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import { GetStaticProps } from 'next'
+import { FaRegCalendarAlt } from 'react-icons/fa'
 
 export default function Home({
   allPostsData,
@@ -54,6 +55,9 @@ export default function Home({
               </Link>
               <br />
               <small className={utilStyles.lightText}>
+                <span className={utilStyles.marginRightIcon}>
+                <FaRegCalendarAlt />
+                </span>
                 <Date dateString={date} />
               </small>
             </li>
