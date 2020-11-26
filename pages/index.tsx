@@ -21,7 +21,7 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
+      {/* <section className={utilStyles.headingMd}>
         <p>Hello World!</p>
         <ul>
           <li>
@@ -43,8 +43,8 @@ export default function Home({
             </a>
           </li>
         </ul>
-      </section>
-      <section className={utilStyles.headingMd}>…</section>
+      </section> */}
+      {/* <section className={utilStyles.headingMd}>…</section> */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
