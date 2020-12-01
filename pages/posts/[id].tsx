@@ -5,6 +5,7 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import { Date } from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
+import { FaRegCalendarAlt } from 'react-icons/fa'
 
 // getStaticProps、getStaticPaths、getServerSideProps 用の型
 import { GetStaticProps, GetStaticPaths } from 'next'
@@ -26,6 +27,9 @@ export default function Post({
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>
+          <span className={utilStyles.marginRightIcon}>
+            <FaRegCalendarAlt />
+          </span>
           <Date dateString={postData.date} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
