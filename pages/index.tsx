@@ -24,7 +24,6 @@ export default function Home({
         <h2 className='text-2xl mt-4 mb-4'>Blog</h2>
         <ul className='list-none'>
           {allPostsData.map(({ id, date, title }) => (
-            // <li className={utilStyles.listItem} key={id}>
             <li className='mb-5' key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
