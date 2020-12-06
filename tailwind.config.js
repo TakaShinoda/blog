@@ -5,7 +5,10 @@ module.exports = {
     extend: {
       margin: {
         auto: 'auto'
-      }
+      },
+      maxWidth: {
+        180: '180px'
+      },
     },
   },
   variants: {
