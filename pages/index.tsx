@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { Date } from '../components/date'
 import { Layout, siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import { GetStaticProps } from 'next'
 import { FaRegCalendarAlt } from 'react-icons/fa'
@@ -21,17 +20,18 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+      <section className='text-xl pt-1'>
+        <h2 className='text-2xl mt-4 mb-4'>Blog</h2>
+        <ul className='list-none'>
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
+            // <li className={utilStyles.listItem} key={id}>
+            <li className='mb-5' key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
               <br />
-              <small className={utilStyles.lightText}>
-                <span className={utilStyles.marginRightIcon}>
+              <small className='text-gray-400'>
+                <span className='mr-1'>
                 <FaRegCalendarAlt />
                 </span>
                 <Date dateString={date} />
