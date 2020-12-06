@@ -21,30 +21,6 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      {/* <section className={utilStyles.headingMd}>
-        <p>Hello World!</p>
-        <ul>
-          <li>
-            <a
-              href="https://github.com/TakaShinoda"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://twitter.com/tttttt_621_s"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Twitter
-            </a>
-          </li>
-        </ul>
-      </section> */}
-      {/* <section className={utilStyles.headingMd}>…</section> */}
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
