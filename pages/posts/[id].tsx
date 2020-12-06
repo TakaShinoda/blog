@@ -25,9 +25,10 @@ export default function Post({
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <span className={utilStyles.marginRightIcon}>
+        <h1 className='text-3xl font-extrabold mt-4 mb-4 tracking-tighter'>{postData.title}</h1>
+
+        <div className='text-gray-400 mb-2'>
+          <span className='mr-1'>
             <FaRegCalendarAlt />
           </span>
           <Date dateString={postData.date} />
