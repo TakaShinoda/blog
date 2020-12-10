@@ -23,7 +23,7 @@ export function getSortedPostsData() {
     // データを id と合わせる
     return {
       id,
-      ...(matterResult.data as { date: string; title: string }),
+      ...(matterResult.data as { date: string; title: string; image?: string }),
     }
   })
   // 投稿を日付でソートする
@@ -81,6 +81,6 @@ export async function getPostData(id: string) {
   return {
     id,
     contentHtml,
-    ...matterResult.data as {date: string; title: string},
+    ...matterResult.data as {date: string; title: string; image?: string},
   }
 }

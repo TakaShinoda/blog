@@ -15,6 +15,7 @@ export default function Post({
   postData: {
     title: string
     date: string
+    image?: string
     contentHtml: string
   }
 }) {

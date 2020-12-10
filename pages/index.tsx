@@ -14,8 +14,10 @@ export default function Home({
     date: string
     title: string
     id: string
+    image?: string
   }[]
 }) {
+  console.log(allPostsData)
   return (
     <Layout home>
       <Head>
@@ -25,19 +27,36 @@ export default function Home({
         <h2 className="text-2xl mt-4 mb-4">Blog</h2>
 
         <ul className="list-none">
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, date, title, image }) => (
             <div className="inline-flex mr-5 max-w-180">
               <li
                 className="mb-5 bg-white rounded-lg overflow-hidden shadow-xl p-3"
                 key={id}
               >
-                <Image
-                src="/images/no_image.png"
-                width='200'
-                height='200'
-                className='w-24 h-24'
-                alt="no-image"
+                
+              {image ? (
+                <img
+                  // src="/images/no_image.png"
+                  src={image}
+                  width='200'
+                  height='200'
+                  className='w-24 h-24'
+                  alt={image}
                 />
+                ) : (
+                <Image
+                  src="/images/no_image.png"
+                  width='200'
+                  height='200'
+                  className='w-24 h-24'
+                  alt="no-image"
+                />
+              )}
+
+                
+
+
+
                 <br/>
                 <Link href={`/posts/${id}`}>
                   <a>{title}</a>
