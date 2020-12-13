@@ -1,11 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import { Date } from '../components/date'
 import { Layout, siteTitle } from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 import { GetStaticProps } from 'next'
-import { FaRegCalendarAlt } from 'react-icons/fa'
-import Image from 'next/image'
+import { CardList } from '../components/cardList'
 
 export default function Home({
   allPostsData,
@@ -17,7 +14,6 @@ export default function Home({
     image?: string
   }[]
 }) {
-  console.log(allPostsData)
   return (
     <Layout home>
       <Head>
@@ -26,24 +22,15 @@ export default function Home({
       <section className="text-xl pt-1">
         <h2 className="text-2xl mt-4 mb-4">Blog</h2>
 
-        <ul className="list-none">
+        <CardList allPostsData={allPostsData} />
+
+        {/* <ul className="list-none">
           {allPostsData.map(({ id, date, title, image }) => (
             <div className="inline-flex mr-5 max-w-180">
               <li
-                className="mb-5 bg-white rounded-lg overflow-hidden shadow-xl p-3"
+                className="mb-5 rounded-lg overflow-hidden shadow-xl p-3 w-44 h-96 bg-green-100"
                 key={id}
               >
-                
-              {image ? (
-                <img
-                  // src="/images/no_image.png"
-                  src={image}
-                  width='200'
-                  height='200'
-                  className='w-24 h-24'
-                  alt={image}
-                />
-                ) : (
                 <Image
                   src="/images/no_image.png"
                   width='200'
@@ -51,12 +38,6 @@ export default function Home({
                   className='w-24 h-24'
                   alt="no-image"
                 />
-              )}
-
-                
-
-
-
                 <br/>
                 <Link href={`/posts/${id}`}>
                   <a>{title}</a>
@@ -71,7 +52,7 @@ export default function Home({
               </li>
             </div>
           ))}
-        </ul>
+        </ul> */}
       </section>
     </Layout>
   )
