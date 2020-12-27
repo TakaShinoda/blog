@@ -13,7 +13,7 @@ export const Layout = ({
   home?: boolean
 }) => {
   return (
-    <div className='max-w-xl pl-4 pr-4 mt-12 ml-auto mr-auto mb-24'>
+    <div className="max-w-xl pl-4 pr-4 mt-12 ml-auto mr-auto mb-24">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -29,27 +29,27 @@ export const Layout = ({
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className='flex flex-col items-center'>
+      <header className="flex flex-col items-center">
         {home ? (
           <>
             <Image
               src="/images/profile.jpg"
-              width='200'
-              height='200'
-              className='w-24 h-24 rounded-full'
+              width="200"
+              height="200"
+              className="w-24 h-24 rounded-full"
               alt={name}
             />
-            <h1 className='text-4xl font-extrabold tracking-tight mt-4 mb-4'>{name}</h1>
+            <h1 className="text-4xl font-extrabold tracking-tight mt-4 mb-4">
+              {name}
+            </h1>
           </>
         ) : (
-          <>
-
-          </>
+          <></>
         )}
       </header>
       <main>{children}</main>
       {!home && (
-        <div className='mt-12'>
+        <div className="mt-12">
           <Link href="/">
             <a>← Back to home</a>
           </Link>
