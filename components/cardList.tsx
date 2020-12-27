@@ -9,10 +9,9 @@ export const CardList = ({ allPostsData }) => {
     <>
       <ul className="list-none">
         {allPostsData.map(({ id, date, title, image }) => (
-          <div className="inline-flex mr-5 max-w-180">
+          <div className="inline-flex mr-5 max-w-180" key={id}>
             <li
               className="mb-5 rounded-lg overflow-hidden shadow-xl p-3 w-44 bg-white"
-              key={id}
             >
               {image ? (
                 <Image
