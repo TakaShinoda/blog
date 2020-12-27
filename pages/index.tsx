@@ -19,7 +19,7 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className="text-xl pt-1">
+      <section className="text-xl pt-1 mt-3">
         {/* <h2 className="text-2xl mt-4 mb-4">Blog</h2> */}
         <CardList allPostsData={allPostsData} />
       </section>
