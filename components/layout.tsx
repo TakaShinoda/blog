@@ -40,7 +40,7 @@ export const Layout = ({
               alt={name}
             />
             <h1 className="text-4xl font-extrabold tracking-tight mt-4 mb-4">
-              {name}
+              {siteTitle}
             </h1>
           </>
         ) : (
