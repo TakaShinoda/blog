@@ -119,14 +119,14 @@ Error: PostCSS plugin tailwindcss requires PostCSS 8.
 
 
 
-> If you run into the error mentioned above, uninstall Tailwind and re-install using the compatibility build instead:
+<!-- > If you run into the error mentioned above, uninstall Tailwind and re-install using the compatibility build instead:
 
 > 上記のエラーが発生した場合は、Tailwindをアンインストールし、互換性のあるビルドを使用して再インストールしてください。
 
 ```
 npm uninstall tailwindcss postcss autoprefixer
 npm install tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
-```
+``` -->
 
 Tailwind CSS v2.0以降PostCSS8に依存しており、PostCSS8はまだ数か月しか経っていないため、エコシステム内の他の多くのツールはまだ更新されていません。
 よって、Tailwind CSSのインストール後にターミナルでこのようなエラーが表示される場合があるそうです。
