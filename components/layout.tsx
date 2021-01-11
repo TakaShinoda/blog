@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const name = 'Takahiro Shinoda'
-export const siteTitle = 'Welcome'
+export const siteTitle = 'blog.takashinoda'
 
 export const Layout = ({
   children,
@@ -18,7 +18,7 @@ export const Layout = ({
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="This is the personal blog site of takashinoda."
         />
         <meta
           property="og:image"
